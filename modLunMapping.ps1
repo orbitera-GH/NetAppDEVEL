@@ -9,6 +9,15 @@
 #
 #############################################################################
 
+#
+#	DEVEL
+#
+#	DEVEL
+#
+#	DEVEL
+#
+######################################################
+
 #Global variables to be set per the storage virtual machine setting
 
 $SqlServerName = ($env:computername).ToLower()

@@ -8,6 +8,16 @@
 #
 #############################################################################
 
+
+#
+#	DEVEL
+#
+#	DEVEL
+#
+#	DEVEL
+#
+######################################################
+
 #Global variables to be set for this script
 
 $sqlserver = ($env:computername).ToLower()

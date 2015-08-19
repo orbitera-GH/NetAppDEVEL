@@ -1,5 +1,15 @@
 # init script located on DC machines and distributed via GPO
 
+#
+#	DEVEL
+#
+#	DEVEL
+#
+#	DEVEL
+#
+######################################################
+
+
 $LogFile = "C:\Windows\Panther\netappRestore.log"
 date >> $LogFile
 echo "RestoreVolumeInitiator.ps1" >> $LogFile
