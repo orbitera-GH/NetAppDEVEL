@@ -12,7 +12,7 @@ $vmName=($env:computername).ToLower()
 function czas {$a="$((get-date -Format yyyy-MM-dd_HH:mm:ss).ToString())"; return $a}
 
 $resp=""
-			$resp=(new-object net.webclient).DownloadString('http://168.62.183.34/dcready.php?name='+$vmName + $debug)
+			$resp=(new-object net.webclient).DownloadString('http://23.96.43.23/dcready.php?name='+$vmName + $debug)
 			$Length = $resp.Length
 			if ($Length -ge 2) {
 				echo "$(czas)  Supervisor sqlinstall.php respond string: $resp." >> $LogFile
