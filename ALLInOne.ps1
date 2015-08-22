@@ -1,5 +1,5 @@
 
-############################################################################
+###########################################################################
 # 
 # Script to connect to SVM from SQL Virtual Machine
 #
@@ -8,14 +8,7 @@
 # Last Modified 08/07/2015
 #
 #############################################################################
-#
-#	DEVEL
-#
-#	DEVEL
-#
-#	DEVEL
-#
-######################################################
+
 
 #set these variables per the storage virtual machine
 
@@ -438,8 +431,24 @@ echo "modAttachSQLDatabase start..." >> $LogFile
 [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.Management.Smo.AttachOptions') | out-null
 
 #Data and Log file paths, set per drive mapping
-$datastr = "G:\Adventureworks.mdf"
-$logstr = "H:\Adventureworks_log.ldf"
+#trying to locate the database
+$driveList=Get-PSDrive -PSProvider FileSystem | select root -ExpandProperty root
+	foreach ($drive in $driveList) {
+		if ($drive -ne "A:\"){
+			$dataFilePatch=$drive+"Adventureworks.mdf"
+			$logFilePatch=$drive+"Adventureworks_log.ldf"
+			if (testpatch $dataFilePatch) {
+				$datastr=$dataFilePatch
+				echo "Database Patch: $datastr" >> $LogFile
+			}
+			if (testpatch $logFilePatch) {
+				$logstr=$logFilePatch
+				echo "Log Patch: $logstr" >> $LogFile
+			}
+		}
+	}
+#$datastr = "G:\Adventureworks.mdf"
+#$logstr = "H:\Adventureworks_log.ldf"
 
 $verbose = $true #for debugging
 
