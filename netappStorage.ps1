@@ -2,8 +2,9 @@
 
 $LogFile = "C:\Windows\Panther\netappStorage.log"
 $LogFile1 = "C:\Windows\Panther\netappStorageScripts.log"
+$SupervisorIP = Get-Content -Path "C:\Windows\Panther\SurerVisorIP.txt"
 $supervisorDnsName = "supervisor1.testdrivesupervisor.eastus.cloudapp.azure.com"
-$supervisorIP="23.96.43.23"
+#$supervisorIP="23.96.43.23"
 $debug="&debug=true"
 function czas {$a="$((get-date -Format yyyy-MM-dd_HH:mm:ss).ToString())"; return $a}
 
@@ -62,7 +63,7 @@ $l=0
 			echo "$(czas)  Stop ALLInOne.PS1" >> $LogFile
 
 			$resp=""
-			$resp=(new-object net.webclient).DownloadString('http://23.96.43.23/sqlinstall.php?name='+$vmName + $debug)
+			$resp=(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/sqlinstall.php?name='+$vmName + $debug)
 			$Length = $resp.Length
 			if ($Length -ge 2) {
 				echo "$(czas)  Supervisor sqlinstall.php respond string: $resp." >> $LogFile

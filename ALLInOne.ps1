@@ -437,11 +437,11 @@ $driveList=Get-PSDrive -PSProvider FileSystem | select root -ExpandProperty root
 		if ($drive -ne "A:\"){
 			$dataFilePatch=$drive+"Adventureworks.mdf"
 			$logFilePatch=$drive+"Adventureworks_log.ldf"
-			if (testpatch $dataFilePatch) {
+			if (test-path $dataFilePatch) {
 				$datastr=$dataFilePatch
 				echo "Database Patch: $datastr" >> $LogFile
 			}
-			if (testpatch $logFilePatch) {
+			if (test-path $logFilePatch) {
 				$logstr=$logFilePatch
 				echo "Log Patch: $logstr" >> $LogFile
 			}
@@ -500,7 +500,7 @@ try
     $acl.SetOwner([System.Security.Principal.NTAccount] "SYSTEM")
 
     $username = "SYSTEM"
-    $logstr = "H:\Adventureworks_log.ldf"
+    #$logstr = "H:\Adventureworks_log.ldf"
     $acl = (Get-Item $logstr).GetAccessControl("Access")
     $accessrule = New-Object system.security.AccessControl.FileSystemAccessRule($username, "FullControl", "None", "None", "Allow")
     $acl.AddAccessRule($accessrule)

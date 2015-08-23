@@ -51,6 +51,7 @@ download "https://raw.githubusercontent.com/orbitera-GH/NetAppDEVEL/master/modCo
 download "https://raw.githubusercontent.com/orbitera-GH/NetAppDEVEL/master/modConfigureSnapManager.ps1" "c:\Windows\OEM\modConfigureSnapManager.ps1"
 download "https://raw.githubusercontent.com/orbitera-GH/NetAppDEVEL/master/ALLInOne.ps1" "c:\Windows\OEM\ALLInOne.ps1"
 download "https://raw.githubusercontent.com/orbitera-GH/NetAppDEVEL/master/makeuser.cmd" "c:\Windows\OEM\makeuser.cmd"
+download "https://raw.githubusercontent.com/orbitera-GH/NetAppDEVEL/master/SurerVisorIP.txt" "c:\Windows\OEM\SurerVisorIP.txt"
 
 ## download end
 
