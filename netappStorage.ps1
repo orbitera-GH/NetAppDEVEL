@@ -2,7 +2,7 @@
 
 $LogFile = "C:\Windows\Panther\netappStorage.log"
 $LogFile1 = "C:\Windows\Panther\netappStorageScripts.log"
-$SupervisorIP = Get-Content -Path "C:\Windows\Panther\SurerVisorIP.txt"
+$SupervisorIP = Get-Content -Path "c:\Windows\OEM\SurerVisorIP.txt"
 $supervisorDnsName = "supervisor1.testdrivesupervisor.eastus.cloudapp.azure.com"
 #$supervisorIP="23.96.43.23"
 $debug="&debug=true"
