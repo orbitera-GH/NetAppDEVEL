@@ -149,7 +149,7 @@ $l=0
 				echo "$(czas)  mgmtLIF ping NOT respond." >> $LogFile
 			}
 			$resp=""
-			$resp=(new-object net.webclient).DownloadString('http://23.96.43.23/sqlready.php?name='+$vmName + $debug)
+			$resp=(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/sqlready.php?name='+$vmName + $debug)
 			$Length = $resp.Length
 			if ($Length -ge 2) {
 				echo "$(czas)  Supervisor sqlinstall.php respond string: $resp." >> $LogFile
