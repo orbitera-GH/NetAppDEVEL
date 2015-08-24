@@ -1,8 +1,9 @@
 # Mount NetApp storage and repair DNS settings past shutdown VM
 
+
 $LogFile = "C:\Windows\Panther\netappStorage.log"
 $LogFile1 = "C:\Windows\Panther\netappStorageScripts.log"
-$SupervisorIP = Get-Content -Path "c:\Windows\OEM\SurerVisorIP.txt"
+$SupervisorIP = Get-Content -Path "c:\Windows\OEM\SuperVisorIP.txt"
 $supervisorDnsName = "supervisor1.testdrivesupervisor.eastus.cloudapp.azure.com"
 #$supervisorIP="23.96.43.23"
 $debug="&debug=true"
