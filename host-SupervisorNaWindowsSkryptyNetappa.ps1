@@ -147,11 +147,14 @@ Set-DNSClientServerAddress –InterfaceIndex $nicIndex -ServerAddresses $domainCon
 # Change Netapp Servicess password
 function changeNetappServicePassword ([string]$NetappServiceName, [string]$NetappServicePassword) {
 	echo "$(czas) Start working with $NetappServiceName" >> $log
+	$NetappServiceName
+	$NetappServicePassword
 	$Service = gwmi win32_service -Filter "name='$NetappServiceName'"
+	$Service
 	$Service.StopService()
 	start-sleep -s 2
 	echo "$(czas) Status service $NetappServiceName is: $($service.State)" >> $log
-	$ServiceSqlServer.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword)
+	$Service.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword)
 	$Service.StartService()
 	start-sleep -s 3
 	$ServiceStatus = gwmi win32_service -Filter "name='$NetappServiceName'"
@@ -183,6 +186,26 @@ function changeSQLservice ([string]$NetappServiceUser, [string]$NetappServicePas
 }
 
 changeSQLservice $NetappServiceUser $NetappServicePassword
+
+echo "$(czas)  Change SQL Servicess password END" >> $log
+
+echo "$(czas)  Disable ServerManager" >> $log
+$serverManagerProcess = Get-Process | where {$_.name -like "ServerManager"}
+If ($($serverManagerProcess.Id)) {
+	echo "$(czas)  ServerManager process is running, try to stopping." >> $log
+	Disable-ScheduledTask -TaskPath '\Microsoft\Windows\Server Manager\' -TaskName 'ServerManager'
+	Stop-Process -Id $serverManagerProcess.Id -Force
+	$serverManagerProcess = Get-Process | where {$_.name -like "ServerManager"}
+	If ($($serverManagerProcess.Id)) {
+		echo "$(czas)  ERROR ServerManager process still running." >> $log
+	}else{
+		echo "$(czas)  Success, ServerManager process stoped." >> $log
+	}
+}else{
+	Disable-ScheduledTask -TaskPath '\Microsoft\Windows\Server Manager\' -TaskName 'ServerManager'
+	echo "$(czas) not found ServerManager process." >> $log
+}
+echo "$(czas)  Disable ServerManager END" >> $log
 
  Import-Module ServerManager -ErrorAction SilentlyContinue
  Import-Module ADDSDeployment -ErrorAction SilentlyContinue
