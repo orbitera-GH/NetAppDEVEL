@@ -15,6 +15,7 @@ $UserName = "NETAPP\netappadmin"
 $i=0
 $l=0
 $NetappServicePassword = "P@ssword1"
+$NetappServiceUser=".\testdriveadmin"
 #$NetappServicePassword = "p@ssword1"
 #$StorageAdmin = "$vmName\testdriveadmin"
 $StorageAdmin = "netapp\netappadmin"
@@ -60,7 +61,7 @@ copy "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NetApp\SnapManager fo
 copy "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NetApp\SnapManager for SQL Server Management Console.lnk" "C:\Users\Public\Desktop\SnapManager for SQL Server Management Console.lnk"
 copy "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NetApp\SnapDrive.lnk" "C:\Users\Public\Desktop\SnapDrive.lnk"
 
-## controller.txt (file on sql dektop)
+## controller.txt (file on sql desktop)
 echo "$(czas)  start assemble controller.txt" >> $log
 switch -wildcard ($vmName) { 
 		"*01" {
@@ -144,46 +145,43 @@ $nicIndex = Get-NetIPInterface -InterfaceAlias ethernet -AddressFamily ipv4 | se
 Set-DNSClientServerAddress –InterfaceIndex $nicIndex -ServerAddresses $domainControllerIP
 #DNS end
 # Change Netapp Servicess password
+function changeNetappServicePassword ([string]$NetappServiceName, [string]$NetappServicePassword) {
+	echo "$(czas) Start working with $NetappServiceName" >> $log
+	$Service = gwmi win32_service -Filter "name='$NetappServiceName'"
+	$Service.StopService()
+	start-sleep -s 2
+	echo "$(czas) Status service $NetappServiceName is: $($service.State)" >> $log
+	$ServiceSqlServer.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword)
+	$Service.StartService()
+	start-sleep -s 3
+	$ServiceStatus = gwmi win32_service -Filter "name='$NetappServiceName'"
+	echo "$(czas) Status service $NetappServiceName is: $ServiceStatus" >> $log
+	echo "$(czas) End working with $NetappServiceName" >> $log
+}
 
-#date >> $log
-echo "$(czas)  Service: Data ONTAP VSS" >> $log
-$service = gwmi win32_service -filter "name='Navssprv'"
-$service.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword) >> $log
-$service.StartService() >> $log
-start-sleep -s 3
-gwmi win32_service -filter "name='Navssprv'" >> $log
+changeNetappServicePassword "Navssprv" $NetappServicePassword
+changeNetappServicePassword "SWSvc" $NetappServicePassword
+changeNetappServicePassword "SDMgmtSvc" $NetappServicePassword
+changeNetappServicePassword "SnapDriveService" $NetappServicePassword
+changeNetappServicePassword "SnapManagerService" $NetappServicePassword
 
-echo "$(czas)  Service: SnapDrive" >> $log
-$service = gwmi win32_service -filter "name='SWSvc'"
-$service.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword) >> $log
-$service.StartService() >> $log
-start-sleep -s 3
-gwmi win32_service -filter "name='SWSvc'" >> $log
-
-echo "$(czas)  Service: SnapDriveManagmentService" >> $log
-$service = gwmi win32_service -filter "name='SDMgmtSvc'"
-$service.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword) >> $log
-$service.StartService() >> $log
-start-sleep -s 3
-gwmi win32_service -filter "name='SDMgmtSvc'" >> $log
-
-echo "$(czas)  Service: SnapDriveService" >> $log
-$service = gwmi win32_service -filter "name='SnapDriveService'"
-$service.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword) >> $log
-$service.StartService() >> $log
-start-sleep -s 3
-gwmi win32_service -filter "name='SnapDriveService'" >> $log
-
-echo "$(czas)  Service: SnapManagerService" >> $log
-$service = gwmi win32_service -filter "name='SnapManagerService'"
-$service.Change($Null,$Null,$Null,$Null,$Null,$Null,$Null,$NetappServicePassword) >> $log
-$service.StartService() >> $log
-start-sleep -s 3
-gwmi win32_service -filter "name='SnapManagerService'" >> $log
-
-#date >> $log
 echo "$(czas)  Change Netapp Servicess password END" >> $log
 
+function changeSQLservice ([string]$NetappServiceUser, [string]$NetappServicePassword) {
+	$ServiceSqlServer = gwmi win32_service -Filter "name='MSSQLSERVER'"
+	$ServiceSqlAgent = gwmi win32_service -Filter "name='SQLSERVERAGENT'"
+	$ServiceSqlAgent.StopService()
+	$ServiceSqlServer.StopService()
+	$ServiceSqlAgent.state
+	$ServiceSqlServer.state
+	$ServiceSqlServer.Change($Null,$Null,$Null,$Null,$Null,$Null,$NetappServiceUser,$NetappServicePassword)
+	$ServiceSqlServer.StartService()
+	$ServiceSqlAgent.StartService()
+	$ServiceSqlAgent.state
+	$ServiceSqlServer.state
+}
+
+changeSQLservice $NetappServiceUser $NetappServicePassword
 
  Import-Module ServerManager -ErrorAction SilentlyContinue
  Import-Module ADDSDeployment -ErrorAction SilentlyContinue
