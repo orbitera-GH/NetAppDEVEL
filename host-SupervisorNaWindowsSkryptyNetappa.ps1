@@ -159,7 +159,6 @@ function changeNetappServicePassword ([string]$NetappServiceName, [string]$Netap
 	echo "$(czas) End working with $NetappServiceName" >> $log
 }
 
-
 changeNetappServicePassword "Navssprv" $NetappServicePassword
 changeNetappServicePassword "SWSvc" $NetappServicePassword
 changeNetappServicePassword "SDMgmtSvc" $NetappServicePassword
