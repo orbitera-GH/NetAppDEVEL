@@ -372,7 +372,11 @@ try
     PostEvent "Mapping Luns on the Server" "Information"
 
     add-nclunmap /vol/sql_data/data_lun_001 $server
+		#harnas
+		Start-NcHostDiskRescan; Wait-NcHostDisk  -SettlingTime 5000
     add-nclunmap /vol/sql_log/log_lun_001 $server
+		#harnas
+		Start-NcHostDiskRescan; Wait-NcHostDisk  -SettlingTime 5000
     add-nclunmap /vol/sql_snapinfo/snapinfo_lun_001 $server
 
 
