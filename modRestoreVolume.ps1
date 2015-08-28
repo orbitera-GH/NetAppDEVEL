@@ -38,61 +38,61 @@ echo "$(czas)  Starting script modRestoreVolume.ps1..." >> $LogFile
 			switch -wildcard ($SqlServerName) { 
 					"*01" {
 						$mgmtLIF = "192.168.250.2"
-						$server = "Server140"
+						$server = "server140"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*02" {
 						$mgmtLIF = "192.168.250.18"
-						$server = "Server141"
+						$server = "server141"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					} 
 					"*03" {
 						$mgmtLIF = "192.168.250.34"
-						$server = "Server142"
+						$server = "server142"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*04" {
 						$mgmtLIF = "192.168.250.50"
-						$server = "Server143"
+						$server = "server143"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*05" {
 						$mgmtLIF = "192.168.250.66"
-						$server = "Server144"
+						$server = "server144"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*06" {
 						$mgmtLIF = "192.168.250.82"
-						$server = "Server145"
+						$server = "server145"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*07" {
 						$mgmtLIF = "192.168.250.98"
-						$server = "Server146"
+						$server = "server146"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*08" {
 						$mgmtLIF = "192.168.250.114"
-						$server = "Server147"
+						$server = "server147"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*09" {
 						$mgmtLIF = "192.168.250.130"
-						$server = "Server148"
+						$server = "server148"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}
 					"*10" {
 						$mgmtLIF = "192.168.250.146"
-						$server = "Server149"
+						$server = "server149"
 						#date >> $LogFile
 						echo "$(czas)  Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 					}

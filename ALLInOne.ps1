@@ -21,7 +21,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.2"
 			$dataLIF1 = "192.168.250.4"
 			$dataLIF2 = "192.168.250.5"
-			$server = "Server140"
+			$server = "server140"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -29,7 +29,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.18"
 			$dataLIF1 = "192.168.250.20"
 			$dataLIF2 = "192.168.250.21"
-			$server = "Server141"
+			$server = "server141"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		} 
@@ -37,7 +37,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.34"
 			$dataLIF1 = "192.168.250.36"
 			$dataLIF2 = "192.168.250.37"
-			$server = "Server142"
+			$server = "server142"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -45,7 +45,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.50"
 			$dataLIF1 = "192.168.250.52"
 			$dataLIF2 = "192.168.250.53"
-			$server = "Server143"
+			$server = "server143"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -53,7 +53,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.66"
 			$dataLIF1 = "192.168.250.68"
 			$dataLIF2 = "192.168.250.69"
-			$server = "Server144"
+			$server = "server144"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -61,7 +61,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.82"
 			$dataLIF1 = "192.168.250.84"
 			$dataLIF2 = "192.168.250.85"
-			$server = "Server145"
+			$server = "server145"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -69,7 +69,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.98"
 			$dataLIF1 = "192.168.250.100"
 			$dataLIF2 = "192.168.250.101"
-			$server = "Server146"
+			$server = "server146"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -77,7 +77,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.114"
 			$dataLIF1 = "192.168.250.116"
 			$dataLIF2 = "192.168.250.117"
-			$server = "Server147"
+			$server = "server147"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -85,7 +85,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.130"
 			$dataLIF1 = "192.168.250.132"
 			$dataLIF2 = "192.168.250.133"
-			$server = "Server148"
+			$server = "server148"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -93,7 +93,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.146"
 			$dataLIF1 = "192.168.250.148"
 			$dataLIF2 = "192.168.250.149"
-			$server = "Server149"
+			$server = "server149"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -240,7 +240,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.2"
 			$dataLIF1 = "192.168.250.4"
 			$dataLIF2 = "192.168.250.5"
-			$server = "Server140"
+			$server = "server140"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -248,7 +248,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.18"
 			$dataLIF1 = "192.168.250.20"
 			$dataLIF2 = "192.168.250.21"
-			$server = "Server141"
+			$server = "server141"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		} 
@@ -256,7 +256,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.34"
 			$dataLIF1 = "192.168.250.36"
 			$dataLIF2 = "192.168.250.37"
-			$server = "Server142"
+			$server = "server142"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -264,7 +264,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.50"
 			$dataLIF1 = "192.168.250.52"
 			$dataLIF2 = "192.168.250.53"
-			$server = "Server143"
+			$server = "server143"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -272,7 +272,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.66"
 			$dataLIF1 = "192.168.250.68"
 			$dataLIF2 = "192.168.250.69"
-			$server = "Server144"
+			$server = "server144"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -280,7 +280,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.82"
 			$dataLIF1 = "192.168.250.84"
 			$dataLIF2 = "192.168.250.85"
-			$server = "Server145"
+			$server = "server145"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -288,7 +288,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.98"
 			$dataLIF1 = "192.168.250.100"
 			$dataLIF2 = "192.168.250.101"
-			$server = "Server146"
+			$server = "server146"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -296,7 +296,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.114"
 			$dataLIF1 = "192.168.250.116"
 			$dataLIF2 = "192.168.250.117"
-			$server = "Server147"
+			$server = "server147"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -304,7 +304,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.130"
 			$dataLIF1 = "192.168.250.132"
 			$dataLIF2 = "192.168.250.133"
-			$server = "Server148"
+			$server = "server148"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -312,7 +312,7 @@ switch -wildcard ($SqlServerName) {
 			$mgmtLIF = "192.168.250.146"
 			$dataLIF1 = "192.168.250.148"
 			$dataLIF2 = "192.168.250.149"
-			$server = "Server149"
+			$server = "server149"
 			
 			echo "$(czas) Hostname is $SqlServerName, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
 		}
@@ -586,7 +586,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.2"
 			$dataLIF1 = "192.168.250.4"
 			$dataLIF2 = "192.168.250.5"
-			$server = "Server140"
+			$server = "server140"
 			$Vserver = "aztestdrive140"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -595,7 +595,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.18"
 			$dataLIF1 = "192.168.250.20"
 			$dataLIF2 = "192.168.250.21"
-			$server = "Server141"
+			$server = "server141"
 			$Vserver = "aztestdrive141"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -604,7 +604,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.34"
 			$dataLIF1 = "192.168.250.36"
 			$dataLIF2 = "192.168.250.37"
-			$server = "Server142"
+			$server = "server142"
 			$Vserver = "aztestdrive142"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -613,7 +613,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.50"
 			$dataLIF1 = "192.168.250.52"
 			$dataLIF2 = "192.168.250.53"
-			$server = "Server143"
+			$server = "server143"
 			$Vserver = "aztestdrive143"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -622,7 +622,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.66"
 			$dataLIF1 = "192.168.250.68"
 			$dataLIF2 = "192.168.250.69"
-			$server = "Server144"
+			$server = "server144"
 			$Vserver = "aztestdrive144"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -631,7 +631,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.82"
 			$dataLIF1 = "192.168.250.84"
 			$dataLIF2 = "192.168.250.85"
-			$server = "Server145"
+			$server = "server145"
 			$Vserver = "aztestdrive145"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -640,7 +640,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.98"
 			$dataLIF1 = "192.168.250.100"
 			$dataLIF2 = "192.168.250.101"
-			$server = "Server146"
+			$server = "server146"
 			$Vserver = "aztestdrive146"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -649,7 +649,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.114"
 			$dataLIF1 = "192.168.250.116"
 			$dataLIF2 = "192.168.250.117"
-			$server = "Server147"
+			$server = "server147"
 			$Vserver = "aztestdrive147"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -658,7 +658,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.130"
 			$dataLIF1 = "192.168.250.132"
 			$dataLIF2 = "192.168.250.133"
-			$server = "Server148"
+			$server = "server148"
 			$Vserver = "aztestdrive148"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -667,7 +667,7 @@ switch -wildcard ($sqlserver) {
 			$mgmtLIF = "192.168.250.146"
 			$dataLIF1 = "192.168.250.148"
 			$dataLIF2 = "192.168.250.149"
-			$server = "Server149"
+			$server = "server149"
 			$Vserver = "aztestdrive149"
 			
 			echo "$(czas) Hostname is $sqlserver, mgmtLIF: $mgmtLIF , dataLIF1: $dataLIF1 , dataLIF2: $dataLIF2" >> $LogFile
@@ -755,7 +755,7 @@ catch
 $SMSQLConfig = "C:\Windows\OEM\SMSQLConfig.xml"
 #$sqlserver = "sqltestdrive03b"
 $sqlserver = ($env:computername).ToLower()
-
+$SnapManagerOutput="c:\windows\Panther\SnapManagerOutput.txt"
 $verbose = $true #for debugging
 
 
@@ -797,22 +797,24 @@ function PostEvent([String]$TextField, [string]$EventType)
 
 try{
     PostEvent "Starting ConfigureSnapManager Script" "Information"
-
+	echo "$(czas) Start configure snapManager" >> $SnapManagerOutput
     # Update the config file
     (gc $SMSQLConfig).replace('WINSQL', $sqlserver) | sc $SMSQLConfig
 
     # Load SnapManager for SQL PowerShell Snap In
-    Add-PSSnapin -Name NetApp.SnapManager.SQL.PS.Admin
+    Add-PSSnapin -Name NetApp.SnapManager.SQL.PS.Admin >> $SnapManagerOutput
 
-    import-config -Server $sqlserver -ControlFilePath $SMSQLConfig -ValidateAndApply
+    import-config -Server $sqlserver -ControlFilePath $SMSQLConfig -ValidateAndApply  >> $SnapManagerOutput
 
     PostEvent "Imported SnapManager configuration" "Information"
     #exit 1
+	echo "$(czas) END configure snapManager" >> $SnapManagerOutput
 }
 catch
 {
     PostEvent "Error in ConfigureSnapManager Script" "Error"
     PostEvent $_.exception "Error"
+	echo "$(czas) kiepsciutko in the configure snapManager script" >> $SnapManagerOutput
     #exit 0
 }
 
