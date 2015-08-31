@@ -21,10 +21,10 @@
 ######################################################
 
 $SqlServerName = ($env:computername).ToLower()
-$LogFile = "C:\Windows\Panther\netappStorageRestoreVolume.log"
+$LogFile = "C:\Windows\Panther\netappStorageScriptsRelease.log"
 $PermissionFile = "C:\Windows\Panther\AllowToDisconnectStorage.yes"
 $SupervisorIP = Get-Content -Path "c:\Windows\OEM\SuperVisorIP.txt"
-$debug="&debug=true"
+$debug="&debug="
 $vmName=($env:computername).ToLower()
 
 function czas {$a="$((get-date -Format yyyy-MM-dd_HH:mm:ss).ToString())"; return $a}
@@ -209,15 +209,15 @@ echo "$(czas)  Starting script modRestoreVolume.ps1..." >> $LogFile
 			
 
 			 PostEvent "Removed Lun Mapping" "Information"
-				$resp=""
-				$resp=(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/releasevnet.php?name='+$vmName + $debug)
-				$Length = $resp.Length
+				$releasevent=""
+				$releasevent=(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/releasevnet.php?name='+$vmName + $debug)
+				$Length = $releasevent.Length
 			if ($Length -ge 2) {
-				echo "$(czas)  Supervisor releasevnet.php respond string: $resp." >> $LogFile
-				echo "$(czas)  resp length: $($resp.Length)" >> $LogFile
+				echo "$(czas)  Supervisor releasevnet.php respond string: $releasevent." >> $LogFile
+				echo "$(czas)  releasevent length: $($releasevent.Length)" >> $LogFile
 			}else{		
-				echo "$(czas)  Supervisor releasevnet.php not respond OK but: $resp." >> $LogFile
-				echo "$(czas)  resp length: $($resp.Length)" >> $LogFile
+				echo "$(czas)  Supervisor releasevnet.php not respond OK but: $releasevent." >> $LogFile
+				echo "$(czas)  releasevent length: $($releasevent.Length)" >> $LogFile
 			}
 				exit 1
 
@@ -226,7 +226,7 @@ echo "$(czas)  Starting script modRestoreVolume.ps1..." >> $LogFile
 		catch
 		{
 			PostEvent $_.exception "Error"
-			
+			(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/BladPodczasRestoreVolume.php?name='+$vmName + $debug)
 			exit 0
 			#end catch
 		}
