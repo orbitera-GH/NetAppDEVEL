@@ -24,7 +24,7 @@ $SqlServerName = ($env:computername).ToLower()
 $LogFile = "C:\Windows\Panther\netappStorageScriptsRelease.log"
 $PermissionFile = "C:\Windows\Panther\AllowToDisconnectStorage.yes"
 $SupervisorIP = Get-Content -Path "c:\Windows\OEM\SuperVisorIP.txt"
-$debug="&debug="
+$debug="&debug=true"
 $vmName=($env:computername).ToLower()
 
 function czas {$a="$((get-date -Format yyyy-MM-dd_HH:mm:ss).ToString())"; return $a}
@@ -213,10 +213,10 @@ echo "$(czas)  Starting script modRestoreVolume.ps1..." >> $LogFile
 				$releasevent=(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/releasevnet.php?name='+$vmName + $debug)
 				$Length = $releasevent.Length
 			if ($Length -ge 2) {
-				echo "$(czas)  Supervisor releasevnet.php respond string: $releasevent." >> $LogFile
+				echo "$(czas)  Supervisor releasevnet.php respond string: $releasevent" >> $LogFile
 				echo "$(czas)  releasevent length: $($releasevent.Length)" >> $LogFile
 			}else{		
-				echo "$(czas)  Supervisor releasevnet.php not respond OK but: $releasevent." >> $LogFile
+				echo "$(czas)  Supervisor releasevnet.php not respond OK but: $releasevent" >> $LogFile
 				echo "$(czas)  releasevent length: $($releasevent.Length)" >> $LogFile
 			}
 				exit 1
@@ -227,6 +227,7 @@ echo "$(czas)  Starting script modRestoreVolume.ps1..." >> $LogFile
 		{
 			PostEvent $_.exception "Error"
 			(new-object net.webclient).DownloadString('http://'+$SupervisorIP+'/BladPodczasRestoreVolume.php?name='+$vmName + $debug)
+            echo "$(czas) error catch section... " >> $LogFile
 			exit 0
 			#end catch
 		}
