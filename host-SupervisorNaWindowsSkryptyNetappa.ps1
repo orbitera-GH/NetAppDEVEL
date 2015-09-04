@@ -64,10 +64,10 @@ copy "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NetApp\SnapDrive.lnk"
 # make partition F
 echo "$(czas)  Start resize disk D" >> $log
 Resize-Partition -DriveLetter D -Size 380GB >> $log
-echo "$(czas)  Stop resize disk D" >> $log
+echo "$(czas)  END resize disk D" >> $log
 echo "$(czas)  Start create partition F" >> $log
 New-Partition -DiskNumber 1 -UseMaximumSize -DriveLetter F >> $log
-echo "$(czas)  Stop create partition F" >> $log
+echo "$(czas)  END create partition F" >> $log
 # make partition F END
 
 ## controller.txt (file on sql desktop)
@@ -116,7 +116,7 @@ switch -wildcard ($vmName) {
 		default {echo "$(czas) ### ERROR can't determine aztestdrive network name for VMname: $vmName"  >> $LogFile}
 	}
 Write-Output "NetApp Storage Controller: $vnetNameForConntrollerFile" | Out-File -FilePath C:\Users\Public\Desktop\controller.txt -Append
-Write-Output "UserName: VSAdmin" | Out-File -FilePath C:\Users\Public\Desktop\controller.txt -Append
+Write-Output "UserName: vsadmin" | Out-File -FilePath C:\Users\Public\Desktop\controller.txt -Append
 Write-Output "Password: Orbitera123!" | Out-File -FilePath C:\Users\Public\Desktop\controller.txt -Append
 echo "$(czas)  stop assemble controller.txt" >> $log
 ## controller.txt stop
@@ -221,9 +221,9 @@ echo "$(czas)  Disable ServerManager END" >> $log
 #echo "$(czas)  ## bcd.ps1 ###" >> %windir%\Panther\WaSetup.log 
 
 Write-Host "## bcd.ps1 ###" | Out-File -FilePath "$log" -Append
-while ($i -lt 250) {
+while ($i -lt 500) {
 	$i++
-	Start-Sleep -Seconds 5
+	Start-Sleep -Seconds 2
 	$response = ping netapp.prv
 	#notify supervisor in netappStorage.ps1
 			#date >> $log
@@ -237,7 +237,7 @@ while ($i -lt 250) {
 					echo "$(czas)  ### Registry HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" >> $log
 					Get-Item HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run >> $log
 					echo "$(czas)  #### Add-computer STOP #####" >> $log
-					$i=300
+					$i=1300
 			}
 		
 }
